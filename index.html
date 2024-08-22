@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="imagenes/Logo.png" alt="Logo de alura Latam">
+    </header>
+    <main>
+        <section class="section-textarea">
+            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+            <div>
+                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="botones">
+                <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+            </div>
+        </section>
+        <section class="section-mensaje">
+            <textarea class="mensaje" id="mensajeTexto" cols="20" rows="11"></textarea>
+            <div>
+                <button class="btn-copiar" id="btnCopiar"> Copiar</button>
+            </div>
+        </section>
+    </main>
+    
+    
+    <div class="theme-toggle">
+        <input class="theme-toggle__checkbox" id="theme-checkbox" type="checkbox" name="theme-checkbox">
+        <div class="theme-toggle__button">
+            <img class="theme-toggle__icon is-icon-white is-moon" src="assets/luna.svg" alt="Icono de la Luna">
+            <img class="theme-toggle__icon is-icon-black" src="assets/sol.svg" alt="Icono del Sol">
+            <label for="theme-checkbox" class="theme-toggle__circle"></label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <div>
+        <footer>
+            <h6 class="footer">Desarrollado por: Esnaider Martinez 2024</h6>
+            
+        </footer>
+    </div>
+    
+</body>
+
+
+</html>

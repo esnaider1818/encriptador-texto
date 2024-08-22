@@ -1,0 +1,284 @@
+/* Estilos globales */
+* {
+    background: var(--body-background-color);
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 25px; 
+    line-height: 150%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variables para el tema claro */
+:root {
+    --main-font: 'Inter', sans-serif;
+    --button-font: 'IBM Plex Mono', monospace;
+    --header-title: #000000;
+    --aside-title: #000000;
+    --placeholder-color: #2C39F9;
+    --textarea-text-color: #0A3871;
+    --textarea-background-color: #FFFFFF;
+    --mensaje-background-color: url('./imagenes/Muñeco.png'); /* Imagen de fondo */
+    --mensaje-text-color: #0A3871;
+    --botones-background-color: #FDFDFD;
+    --botones-text-color: #0A3871;
+    --theme-toggle-background-color: #FDFDFD;
+    --theme-toggle-border-color: #2C39F9;
+    --theme-toggle-button-color: #2C39F9;
+    --theme-toggle-icon-color: invert(0);
+    /*--body-background-color: #F3F5FC;*/
+    --informacion-text-color: #495057;
+    --border-theme-light: #2C39F9;
+    --theme-footer-background-color: #D8DFE8;   /*pie de pagina*/
+    font-size: 62.5%;
+}
+
+/* Variables para el tema oscuro */
+:root.dark {
+    --header-title: #FFFFFF;
+    --aside-title: #F8FBFF;
+    --placeholder-color: #02C171;
+    --textarea-text-color: #02C171;
+    --textarea-background-color: #050E0C;
+    --mensaje-background-color: url('./imagenes/Muñeco.png'); /* Imagen de fondo */
+    --mensaje-text-color: #02C171;
+    --botones-background-color: #050E0C;
+    --botones-text-color: #02C171;
+    --theme-toggle-background-color: #050E0C;
+    --theme-toggle-border-color: #02C171;
+    --theme-toggle-button-color: #02C171;
+    --theme-toggle-icon-color: invert(1);
+    --body-background-color: #0F0F0F;
+    --informacion-text-color: #EDEDED;
+    --border-theme-light: #02C171;
+    --informacion-text-color: #02C171;
+    --theme-footer-background-color: #0F0F0F;
+}
+
+/* Estilos adicionales */
+body {
+    background-color: var(--body-background-color);
+    padding: 2.2rem 5% 1rem;
+    font-family: var(--main-font);
+    display: flex;
+    flex-flow: column;
+    gap: 2.6rem;
+   /* height: 100vh; */
+}
+
+header {
+    background-color: var(--body-background-color);
+}
+
+.logo {
+    padding-top: 5px;
+    margin-left: 10px;
+    width: 10%;
+    bottom: 0;
+}
+
+main {
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 80px;
+}
+
+.text-area {
+    border: none;
+    color: var(--textarea-text-color);
+    background-color: var(--textarea-background-color);
+    margin-top: 10px;
+    text-transform: lowercase;
+}
+
+.text-area::placeholder {
+    color: var(--placeholder-color);
+}
+
+.text-area:focus {
+    outline: none;
+}
+
+.mensaje {
+    background: var(--mensaje-background-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--mensaje-text-color);
+    border: none;
+    border-radius: 24px;
+    margin-left: 98px;
+    margin-top: 10px;
+    padding-left: 20px;
+    max-height: 380px;
+}
+
+.mensaje:focus {
+    outline: none;
+}
+
+.botones {
+    display: flex;
+    margin-top: 18px;
+}
+
+.btn-encriptar {
+    background-color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+}
+
+.btn-desencriptar {
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 30px;
+    width: 328px;
+}
+
+.btn-copiar {
+    background: #D8DFE8;  
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 50px;
+    margin-top: 38px;  /* ubica el boton debajo de la caja de texto*/
+    margin-right: 50px;
+    position: absolute;
+    width: 336px;
+}
+
+.informacion {
+    color: var(--informacion-text-color);
+    font-size: 18px;
+}
+
+/* Cambio de tema */
+.theme-toggle {
+    position: fixed;
+    top: 1rem; /* me ubica el boton en parte de arriba a la derecha */
+    right: 1rem;
+    background-color: var(--theme-toggle-background-color);
+    border: 1px solid var(--theme-toggle-border-color);
+    border-radius: 5rem;
+    padding: 0.5rem;
+}
+
+/*da un diseño de ovalo en el boton de cambio de tema */
+.theme-toggle__checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+/*transicion del boton de cambio de tema*/
+.theme-toggle__checkbox:checked + .theme-toggle__button .theme-toggle__circle {
+    transform: translateX(0%);
+}
+
+.theme-toggle__button {
+    padding: 0.5rem;
+    border-radius: 5rem;
+    background-color: var(--box-background-color);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+    height: 5rem;
+}
+
+.theme-toggle__icon {
+    margin: 0rem 0.5rem;
+} 
+
+/*circulo que cuando se da click cambia de claro a oscuro*/
+.theme-toggle__circle {
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: var(--border-theme-light);
+    position: absolute;
+    cursor: pointer;
+    transform: translateX(120%);
+    transition: all .3s linear;
+}
+
+/*pie de pagina que dice desarrollado por esnaider martinez*/
+.footer{
+    background-color:var(--theme-footer-background-color);
+    padding: 10px;
+    color: #2C39F9;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+
+/*codigo de responsividad*/
+@media (max-width: 1024px) {         /* se crean estilos responsivos pantallas grandes (escritorios, laptop)*/
+
+
+    /* estilo para tablets y pantallas más pequeñas */
+    main {
+        flex-direction: column;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .text-area, 
+    .mensaje {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .btn-encriptar, .btn-desencriptar, .btn-copiar {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .btn-copiar {
+        position: relative;
+    }
+    
+    .logo {
+        width: 20%;
+    }
+    
+    .informacion {
+        font-size: 16px;
+    }
+}
+
+/* estilo para móviles */
+@media (max-width: 768px) {
+    
+    
+    .text-area {
+        font-size: 1.6rem;
+    }
+    
+    .mensaje {
+        font-size: 1.6rem;
+        padding-left: 10px;
+    }
+    
+    .btn-encriptar, .btn-desencriptar, .btn-copiar {
+        height: auto;
+        font-size: 1.4rem;
+    }
+    
+    .footer {
+        font-size: 14px;
+    }
+}
+
